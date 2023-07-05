@@ -18,8 +18,13 @@ const App = () => {
                 setInputList("");
         };
 
-        const deleteItems=()=>{
-          console.log("deleted");
+        const deleteItems=(id)=>{
+          //console.log("deleted");
+          setItems((prev) => {
+                return prev.filter((arr,ind)=>{
+                        return id!==ind
+                })
+        });   
         }
 
         return (
@@ -40,7 +45,7 @@ const App = () => {
                                         />
 
                                         <ol>
-                                                {/* <li><CancelIcon className='icon-cross' style={{fontSize:40}}/> {inputList}</li> */}
+                                                
                                                 {items.map((item, index) => {
                                                         return (
                                                                 <Todolist
@@ -63,5 +68,5 @@ const App = () => {
                 </>
         );
 };
-
+//
 export default App;

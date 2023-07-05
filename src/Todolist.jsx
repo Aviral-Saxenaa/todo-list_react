@@ -9,7 +9,9 @@ const Todolist = (props) => {
                                         style={{
                                                 fontSize: 40,
                                         }}
-                                        onClick={props.onSelect}
+                                        onClick={()=>{
+                                                props.onSelect(props.id)
+                                        }}
                                 />
                                 {props.text}
                         </li>
